@@ -14,4 +14,8 @@ describe('Word#scrabble') do
     word = Word.new("jackalop")
     expect(word.scrabble()).to(eq(23))
   end
+  it("returns a scrabble score for a word using our points hash regardless of caps") do
+    word = Word.new("JacKAloP")
+    expect(word.scrabble()).to(eq(23))
+  end
 end

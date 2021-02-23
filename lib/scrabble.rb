@@ -1,6 +1,6 @@
 class Word
   def initialize(str)
-    @word = str.lowercase()
+    @word = str
   end
   def scrabble()
     current_points = 0
