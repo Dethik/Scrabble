@@ -12,8 +12,7 @@ class Word
       5 => ["k"],
       8 => ["j", "x"],
       10 => ["q", "z"]}
-    letters = @word.split("")
-    letters.each do |letter|
+    @word.each_char do |letter|
       points_table.each() do |points, letter_array|
         current_points += points if (letter_array.include?(letter))
       end
@@ -21,4 +20,3 @@ class Word
     current_points
   end
 end
-
