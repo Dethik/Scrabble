@@ -10,4 +10,8 @@ describe('Word#scrabble') do
     word = Word.new("b")
     expect(word.scrabble()).to(eq(3))
   end
+  it("returns a scrabble score for a word using our points hash") do
+    word = Word.new("jackalop")
+    expect(word.scrabble()).to(eq(23))
+  end
 end

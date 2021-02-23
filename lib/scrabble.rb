@@ -1,8 +1,9 @@
 class Word
   def initialize(str)
-    @word = str
+    @word = str.lowercase()
   end
   def scrabble()
+    current_points = 0
     points_table = {
       1 => ["a", "e", "i", "o", "u", "l", "r", "s", "t"],
       2 => ["d", "g"],
@@ -13,13 +14,12 @@ class Word
       10 => ["q", "z"]}
     letters = @word.split("")
     letters.each do |letter|
-      if ( points_table[1].include?(letter))
-        return 1
-      elsif ( points_table[2].include?(letter))
-        return 2
-      elsif ( points_table[3].include?(letter))
-        return 3
+      points_table.each() do |points, letter_array|
+        if (letter_array.include?(letter))
+          current_points += points
+        end
       end
     end
+    current_points
   end
 end
