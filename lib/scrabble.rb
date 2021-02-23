@@ -15,11 +15,10 @@ class Word
     letters = @word.split("")
     letters.each do |letter|
       points_table.each() do |points, letter_array|
-        if (letter_array.include?(letter))
-          current_points += points
-        end
+        current_points += points if (letter_array.include?(letter))
       end
     end
     current_points
   end
 end
+
